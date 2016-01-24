@@ -22,11 +22,22 @@
     <script src="js/sphere-collision.js"></script>
 
     <style type="text/css">
+        body {
+            font-family:sans-serif;
+        }
         #stage {
             position: absolute;
             top:0px;
             bottom: 0px;
             width: 100%;
+        }
+        .info-link {
+            position: absolute;
+            z-index: 10;
+            font-size: 12px;
+            right: 45px;
+            top: 5px;
+            color: #d8d8d8;
         }
 
     </style>
@@ -34,7 +45,9 @@
 </head>
 
 <body>
+    <div class="info-link"> Grab screen to rotate and scroll to zoom</div>
     <div id="stage"></div>
+    <div class="info-link"> Created with </div>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+// https://github.com/ggeoffrey/d3.layout.force3D
 (function(){
 
   if(!(d3 && d3.layout && d3.geom)){
@@ -157,13 +158,13 @@
     };
     octree.extent = function(_) {
       if (!arguments.length) return x1 == null ? null : [ [ x1, y1, z1 ], [ x2, y2, z2 ] ];
-      if (_ == null) x1 = y1 = z1 = x2 = y2 = z2 = null; else x1 = +_[0][0], y1 = +_[0][1], 
+      if (_ == null) x1 = y1 = z1 = x2 = y2 = z2 = null; else x1 = +_[0][0], y1 = +_[0][1],
       z1 = +_[0][2], x2 = +_[1][0], y2 = +_[1][1], z2 = +_[1][2];
       return octree;
     };
     octree.size = function(_) {
       if (!arguments.length) return x1 == null ? null : [ x2 - x1, y2 - y1, z2 - z1 ];
-      if (_ == null) x1 = y1 = z1 = x2 = y2 = z2 = null; else x1 = y1 = z1 = 0, x2 = +_[0], 
+      if (_ == null) x1 = y1 = z1 = x2 = y2 = z2 = null; else x1 = y1 = z1 = 0, x2 = +_[0],
       y2 = +_[1], z2 = +_[1];
       return octree;
     };

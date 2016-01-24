@@ -20,10 +20,10 @@ function sphereCollision(canvas) {
     }
 
 
-    //Extension of collition function from http://bl.ocks.org/mbostock/3231298
+    //Expansion of collision function from http://bl.ocks.org/mbostock/3231298
 
     function collide(node) {
-        var r = node.radius + 16,
+        var r = node.radius,
             nx1 = node.x - r,
             nx2 = node.x + r,
             ny1 = node.y - r,
@@ -31,22 +31,20 @@ function sphereCollision(canvas) {
             nz1 = node.z - r,
             nz2 = node.z + r;
         return function (quad, x1, y1, z1, x2, y2, z2) {
+
             if (quad.point && (quad.point !== node)) {
                 var x = node.x - quad.point.x,
                     y = node.y - quad.point.y,
-
                     z = node.z - quad.point.z,
-
                     l = Math.sqrt(x * x + y * y + z * z),
-
                     r = node.radius + quad.point.radius;
 
                 if (l < r) {
+
                     l = (l - r) / l * 0.5;
                     node.x -= x *= l;
                     node.y -= y *= l;
                     node.z -= z *= l;
-
 
                     quad.point.x += x;
                     quad.point.y += y;
@@ -195,7 +193,6 @@ function sphereCollision(canvas) {
         updateSpheres();
 
         raycaster.setFromCamera(mouse, camera);
-
         var intersects = raycaster.intersectObjects(spheresNodes);
         if (intersects.length > 0) {
             INTERSECTED = intersects[0].object;
@@ -203,14 +200,14 @@ function sphereCollision(canvas) {
             root.py = INTERSECTED.position.y;
             root.pz = INTERSECTED.position.z;
             force.resume();
-        } else {
-            INTERSECTED = null;
         }
 
         renderer.render(scene, camera);
 
 
     }
+
+
 
 
     setupScreen(canvas);
