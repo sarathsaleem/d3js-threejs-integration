@@ -127,6 +127,7 @@ function sphereCollision(canvas) {
         renderer = new THREE.WebGLRenderer({
             antialias: true
         });
+        renderer.setClearColor( 0xffffff );
 
         renderer.setSize(containerEle.innerWidth(), containerEle.innerHeight());
         renderer.domElement.style.position = 'absolute';
@@ -138,14 +139,14 @@ function sphereCollision(canvas) {
         scene.fog = new THREE.Fog(0xffffff, 1000, 10000);
         // LIGHTS
 
-        var directionalLight = new THREE.DirectionalLight("#14bc22", 1.475);
+        var directionalLight = new THREE.DirectionalLight("#bfbfbf", 0.5);
         directionalLight.position.set(100, 100, -100);
         scene.add(directionalLight);
 
         var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1.25);
         hemiLight.color.setHSL(0.6, 1, 0.75);
         hemiLight.groundColor.setHSL(0.1, 0.8, 0.7);
-        hemiLight.position.y = 500;
+        hemiLight.position.y = 5100;
         scene.add(hemiLight);
 
         var axes = new THREE.AxisHelper(1000);
