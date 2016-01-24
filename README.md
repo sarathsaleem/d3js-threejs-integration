@@ -9,5 +9,5 @@ A sphere collision implemented like collision detection example from [mbostockâ€
 
 ![d3js-force3D-threejs-integration](http://sarathsaleem.github.io/d3js-threejs-integration/d3js-force3D-threejs-integration.png)
 
-**[SEE DEMO HERE]([http://sarathsaleem.github.io/d3js-threejs-integration/sphere-collision])**
+**[SEE DEMO HERE](http://sarathsaleem.github.io/d3js-threejs-integration/sphere-collision)**
 
